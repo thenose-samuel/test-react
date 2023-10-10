@@ -1,0 +1,55 @@
+"use client";
+
+import UploadComponent from "@/components/UploadComponent";
+import { useState } from "react";
+
+export default function Home() {
+  const [productId, setProductId] = useState("");
+  const [customerWallet, setCustomerWallet] = useState("");
+  const [expireDate, setExpireDate] = useState("");
+  return (
+    <div>
+      <div className="flex flex-col justify-center w-screen h-screen items-center">
+        <div className="w-96  h-96 rounded-lg p-5 border-indigo-200 border-2 border-dashed">
+          <div className="text-indigo-600 text-xs font-bold pb-2">
+            Wallet Address
+          </div>
+          <input
+            onChange={(e) => {
+              setCustomerWallet(e.target.value);
+            }}
+            placeholder="Enter customer's wallet address"
+            className="placeholder:text-neutral-400 max-w-full rounded-md w-full h-10 border-2 focus:ring-indigo-400 focus:ring-2 focus:outline-none text-neutral-600 font-regular text-sm p-2"
+          ></input>
+          <div className="text-indigo-600 text-xs font-bold pt-4">
+            Expiration Date
+          </div>
+          <input
+            onChange={(e) => {
+              setExpireDate(e.target.value);
+            }}
+            placeholder="DD/MM/YYYY"
+            className="placeholder:text-neutral-400 mt-2 max-w-full rounded-md w-full h-10 border-2 focus:ring-indigo-400 focus:ring-2 focus:outline-none text-neutral-600 font-regular text-sm p-2"
+          ></input>
+          <div className="text-indigo-600 text-xs font-bold pt-4">
+            Product ID
+          </div>
+          <input
+            onChange={(e) => {
+              setProductId(e.target.value);
+            }}
+            placeholder="Enter the product ID"
+            className="placeholder:text-neutral-400 mt-2 max-w-full rounded-md w-full h-10 border-2 focus:ring-indigo-400 focus:ring-2 focus:outline-none text-neutral-600 font-regular text-sm p-2"
+          ></input>
+          <div className="flex flex-col items-start justify-center mt-2">
+            <UploadComponent
+              expireDate={expireDate}
+              productId={productId}
+              customerWallet={customerWallet}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

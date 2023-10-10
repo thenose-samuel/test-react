@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import Admin from "./admin/page";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  return <Admin></Admin>;
 }
 
-export default App;
+// <>
+//       <div
+//         style={{ backgroundColor: "#101014" }}
+//         className="h-screen overflow-x-hidden overflow-y-scroll w-screen"
+//       >
+//         <div
+//           id="top-section"
+//           className="w-screen pt-10 pl-24 pr-14 h-96 bg-gradient-to-b gradient from-cyan-700 from-30% flex flex-col justify-between"
+//         >
+//           <div style={{ color: "#f2efce" }} className="flex justify-between ">
+//             <div className="cursor-pointer">GO BACK</div>
+//             <div className="flex-row flex">
+//               <div className="mr-12 cursor-pointer">INFO</div>
+//               <div className="cursor-pointer">LOGOUT</div>
+//             </div>
+//           </div>
+//           <div
+//             style={{ color: "#f2efce" }}
+//             className=" mb-20 font-bold text-7xl"
+//           >
+//             Admin
+//           </div>
+//         </div>
+//         <div style={{ color: "#f2efce" }} id="overview" className="pl-24 mt-10">
+//           <div className="text-3xl font-bold">Overview</div>
+//           <div className="text-2xl mt-2 font-regular tracking-wider">
+//             Here you can manage the sellers that can issue the NFT-based
+//             warranties.
+//           </div>
+//           <div>
+//             <AddSeller />
+//           </div>
+//           <div className="font-regular text-xl mt-5 tracking-wider mb-2">
+//             Previously Added Sellers
+//           </div>
+//           <PreviousAddedSeller />
+//         </div>
+
+//         <Footer></Footer>
+//       </div>
+//     </>
