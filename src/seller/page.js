@@ -1,9 +1,22 @@
+import { useState } from "react";
 import Footer from "../components/Footer";
 import MintNFT from "./mint-nft";
 
 export default function Seller() {
+  const [loading, setLoading] = useState(false);
   return (
     <>
+      <div
+        className={`absolute z-50 h-[100%] w-full ${
+          loading ? "block" : "hidden"
+        } backdrop-blur-lg`}
+      >
+        <div className="flex flex-row  h-full justify-center text-center items-center text-white text-2xl font-bold">
+          <div className="self-center duration-100 animate-bounce">
+            Processing please wait...
+          </div>
+        </div>
+      </div>
       <div
         style={{ backgroundColor: "#101014" }}
         className="h-screen overflow-x-hidden overflow-y-scroll w-screen"
@@ -32,11 +45,10 @@ export default function Seller() {
           <div className="text-3xl font-bold">Overview</div>
           <div className="text-2xl mt-2 font-regular tracking-wider">
             This is the seller's panel. Here, you can mint warranty nfts to your
-            customers and other configuration controls.
+            customers.
           </div>
           <MintNFT />
         </div>
-
         <Footer></Footer>
       </div>
     </>
