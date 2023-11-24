@@ -61,7 +61,7 @@ export default function Admin() {
     try {
       data = await contract.methods
         .getSellers()
-        .call({ gasPrice: "200000", from: connectedWallet });
+        .call({ from: connectedWallet });
     } catch (e) {
       console.log("An error occurred");
       console.log(e);
